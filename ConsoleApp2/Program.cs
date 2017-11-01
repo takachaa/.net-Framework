@@ -17,6 +17,8 @@ namespace ConsoleApp2
 
             StringBuilder sb1;
 
+            sb2 = new StringBuilder("明日の天気");
+
             // .ToArray(); 　　模範解答からカット 
             // if (array.Length > 0)　なくてもうまくいったけど、なぜ必要？ 
             var text2 = array2[0];
