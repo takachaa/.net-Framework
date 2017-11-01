@@ -13,10 +13,12 @@ namespace ConsoleApp2
             var text = "Jackdaws love my big sphinx of quartz";
             var array2 = text.Split(' ');
 
+            StringBuilder sb2;
+
             // .ToArray(); 　　模範解答からカット 
             // if (array.Length > 0)　なくてもうまくいったけど、なぜ必要？ 
             var text2 = array2[0];
-            var sb2 = new StringBuilder(text2); //インスタンス化してarray2[0]を入れる？ 
+            sb2 = new StringBuilder(text2); //インスタンス化してarray2[0]を入れる？ 
             foreach (var word in array2)
             {
                 sb2.Append(' ');
