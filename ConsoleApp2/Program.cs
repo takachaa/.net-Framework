@@ -42,22 +42,5 @@ namespace ConsoleApp2
 
 
         }
-
-        public static void Ex1(char[] text)
-        {
-            Dictionary<char, string> dic = text.ToDictionary(n => n, n => n.ToString());
-            foreach (var item in dic)
-            {
-                Console.WriteLine(item);
-            }
-
-        }
-
-        class Book
-        {
-            public string Title { get; set; }
-            public int Price { get; set; }
-            public int Pages { get; set; }
-        }
     }
 }
