@@ -39,6 +39,11 @@ namespace ConsoleApp2
             Console.ReadLine();
 
 
+            Console.WriteLine("追加の処理");
+            Console.WriteLine("追加の処理2");
+            Console.ReadLine();
+
+
 
 
         }
