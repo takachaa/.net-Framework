@@ -10,45 +10,54 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            var text = "Jackdaws love my big sphinx of quartz";
-            var array2 = text.Split(' ');
 
-            StringBuilder sb2;
+            var text2 = "Cozy lummox gives smart squid who asks for job pen";
+            text2 = text2.Replace(" ", "").ToLower();
+            
+            char[] words = text2.ToCharArray();
 
-            StringBuilder sb1;
+            var dictionary = new Dictionary<char, int>();
 
-            sb2 = new StringBuilder("明日の天気");
-
-            // .ToArray(); 　　模範解答からカット 
-            // if (array.Length > 0)　なくてもうまくいったけど、なぜ必要？ 
-            var text2 = array2[0];
-            sb2 = new StringBuilder(text2); //インスタンス化してarray2[0]を入れる？ 
-            foreach (var word in array2)
+            foreach(var word in words)
             {
-                sb2.Append(' ');
-                sb2.Append(word);
+                if (dictionary.ContainsKey(word))
+                {
+                    dictionary[word]++;
+                }
+                else
+                {
+                    dictionary.Add(word, 1);
+                }
             }
-            var clone2 = sb2.ToString();
-            Console.WriteLine(clone2);
 
-            sb1 = new StringBuilder(text2);
-            foreach (var word in array2.Skip(2))
+            var new_dic = dictionary.OrderBy(x => x.Key);
+
+            foreach (var v in new_dic)
             {
-                sb1.Append(' ');
-                sb1.Append(word);
+                Console.WriteLine(v.Key + " : " + v.Value);
             }
-            var clone3 = sb1.ToString();
-            Console.WriteLine(clone3);
-
             Console.ReadLine();
 
-        }
-    }
 
-    class Book
-    {
-        public string Title { get; set; }
-        public int Price { get; set; }
-        public int Pages { get; set; }
+
+
+        }
+
+        public static void Ex1(char[] text)
+        {
+            Dictionary<char, string> dic = text.ToDictionary(n => n, n => n.ToString());
+            foreach (var item in dic)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+
+        class Book
+        {
+            public string Title { get; set; }
+            public int Price { get; set; }
+            public int Pages { get; set; }
+        }
     }
 }
