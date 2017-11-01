@@ -15,6 +15,8 @@ namespace ConsoleApp2
 
             StringBuilder sb2;
 
+            StringBuilder sb1;
+
             // .ToArray(); 　　模範解答からカット 
             // if (array.Length > 0)　なくてもうまくいったけど、なぜ必要？ 
             var text2 = array2[0];
@@ -27,7 +29,7 @@ namespace ConsoleApp2
             var clone2 = sb2.ToString();
             Console.WriteLine(clone2);
 
-            var sb1 = new StringBuilder(text2);
+            sb1 = new StringBuilder(text2);
             foreach (var word in array2.Skip(2))
             {
                 sb1.Append(' ');
